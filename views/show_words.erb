@@ -1,11 +1,14 @@
-<h2><%= @word_type.capitalize %></h2>
+<h1><%= @word_type.capitalize %></h1>
 <a href="/words">Go Back</a>
 
 
-<% if @words.any? %>
-  <ul>
-    <% @words.each do |word| %>
-      <li><% word %></li>
+<% if @all_rows.any? %>
+  <div class="show-words-container">
+    <% @all_rows.each do |word| %>
+      <div>
+        <h2><%=word[0] %></h2>
+        <p><%=word %></p>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% end %>

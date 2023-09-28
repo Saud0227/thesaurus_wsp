@@ -20,13 +20,13 @@ class App < Sinatra::Base
       redirect '/words'
     end
 
-    rows = CSV.read("/public/data/#{word_type.capitalize}.csv")
+    rows = CSV.read("public/data/#{word_type.capitalize}.csv").drop(1)
 
     @title = word_type.capitalize
     @word_type = word_type
-    @words = rows
+    @all_rows = rows
 
-    puts rows
+    # puts rows
     erb :show_words
   end
 end
