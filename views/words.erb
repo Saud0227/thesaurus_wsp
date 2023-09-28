@@ -1,0 +1,10 @@
+<h1>Words</h1>
+
+<ul>
+
+  <% @@allowed_word_types.each do |word_type|%>
+    <li><a href="/words/<%=word_type %>"><%=word_type %></a></li>
+  <% end %>
+</ul>
+
+<a href="/">Go Back</a>
