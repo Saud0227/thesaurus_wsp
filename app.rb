@@ -29,4 +29,13 @@ class App < Sinatra::Base
     # puts rows
     erb :show_words
   end
+
+  get '/words/:type/:index' do |word_type, index|
+    data = CSV.read("public/data/#{word_type.capitalize}.csv").drop(1)[index.to_i]
+    @title = data[0].capitalize + " Definition"
+    @word_type = word_type
+    @word_data = data
+
+    erb :show_word
+  end
 end

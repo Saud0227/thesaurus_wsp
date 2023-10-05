@@ -4,10 +4,10 @@
 
 <% if @all_rows.any? %>
   <div class="show-words-container">
-    <% @all_rows.each do |word| %>
+    <% @all_rows.each_with_index do |word, index| %>
       <div>
-        <h2><%=word[0] %></h2>
-        <p><%=word %></p>
+        <h2><%=word[0].capitalize %></h2>
+        <a href="/words/<%= @word_type %>/<%= index %>">Definition</a>
       </div>
     <% end %>
   </div>

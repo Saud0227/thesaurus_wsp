@@ -7,11 +7,20 @@ h1 {
 }
 
 div.show-words-container {
+    margin-top: 20px;
     display: grid;
     grid-auto-rows: 10vh;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 div.show-words-container div h2 {
     margin: 0;
+}
+
+div.show-words-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
 }
