@@ -1,0 +1,12 @@
+<h1><%= @word_data[0].capitalize %></h1>
+<a href="/words/<%= @word_type %>">Go Back</a>
+
+
+<p><%= @word_data %></p>
+
+<% @display_data.each do |word| %>
+  <p><%= word %></p>
+
+<% end %>
+
+
