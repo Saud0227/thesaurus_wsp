@@ -62,4 +62,29 @@ class App < Sinatra::Base
 
     erb :show_word
   end
+
+  #________________________________
+  get '/thesaurus' do
+    @title = "The Saurus"
+    rows = CSV.read("public/data/thesaurus.csv").drop(1)
+    @all_rows = rows
+    erb :thesaurus
+  end
+
+  get '/thesaurus/:word' do |word|
+    # rows = CSV.read("public/data/thesaurus.csv").drop(1)
+
+    @all_data = {}
+
+    CSV.foreach("public/data/thesaurus.csv", headers: true) do |row|
+      puts row
+      raise ValueError
+    end
+
+
+
+    @title = word.capitalize + " Synonyms"
+
+    erb :show_synonyms
+  end
 end
